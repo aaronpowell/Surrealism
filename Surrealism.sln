@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30324.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Surrealism", "Surrealism\Surrealism.csproj", "{A91B766A-FF53-4222-A7A2-113AC8207B94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Surrealism.Tests", "Surrealism.Tests\Surrealism.Tests.csproj", "{1AE8D2E9-DB9D-4298-A4FC-1B41049FF2D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A91B766A-FF53-4222-A7A2-113AC8207B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A91B766A-FF53-4222-A7A2-113AC8207B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A91B766A-FF53-4222-A7A2-113AC8207B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A91B766A-FF53-4222-A7A2-113AC8207B94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AE8D2E9-DB9D-4298-A4FC-1B41049FF2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE8D2E9-DB9D-4298-A4FC-1B41049FF2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE8D2E9-DB9D-4298-A4FC-1B41049FF2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE8D2E9-DB9D-4298-A4FC-1B41049FF2D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
