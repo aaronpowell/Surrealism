@@ -142,5 +142,30 @@ namespace Surrealism
         {
             return !IsLessThanOrEqualTo(s2);
         }
+
+        public int Real()
+        {
+            var s = new Surreal(value);
+            var i = 0;
+
+            if (s.IsNegative())
+            {
+                while (!s.IsZero())
+                {
+                    s.Increment();
+                    i--;
+                }
+            }
+            else
+            {
+                while (!s.IsZero())
+                {
+                    s.Decrement();
+                    i++;
+                }
+            }
+
+            return i;
+        }
     }
 }

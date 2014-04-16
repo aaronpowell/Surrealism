@@ -113,5 +113,17 @@ namespace Surrealism.Tests
 
             Assert.That(s1.IsGreaterThan(s2), Is.EqualTo(true));
         }
+
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(10)]
+        [TestCase(-1)]
+        [TestCase(-10)]
+        public void SurrealNumber_CanBeConvertedToRealNumber(int num)
+        {
+            var s = new Surreal(num);
+
+            Assert.That(s.Real(), Is.EqualTo(num));
+        }
     }
 }
