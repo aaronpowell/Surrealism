@@ -158,5 +158,18 @@ namespace Surrealism.Tests
             Assert.That(result.Real(), Is.EqualTo(a - b));
         }
 
+        [TestCase(2, 10)]
+        [TestCase(0, -1)]
+        [TestCase(-10, -1)]
+        [TestCase(1, -1)]
+        public void CanMultiplyTwoNumbers(int a, int b)
+        {
+            var s1 = new Surreal(a);
+            var s2 = new Surreal(b);
+
+            var result = s1 * s2;
+
+            Assert.That(result.Real(), Is.EqualTo(a * b));
+        }
     }
 }

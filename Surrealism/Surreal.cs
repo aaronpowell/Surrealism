@@ -217,5 +217,33 @@ namespace Surrealism
 
             return x;
         }
+
+        public static Surreal operator *(Surreal a, Surreal b)
+        {
+            if (a.IsZero() || b.IsZero())
+                return new Surreal();
+
+            var x = new Surreal();
+            var y = new Surreal(b.value);
+
+            if (y.IsPositive())
+            {
+                while (!y.IsZero())
+                {
+                    x = x + new Surreal(a.value);
+                    y.Decrement();
+                }
+            }
+            else
+            {
+                while (!y.IsZero())
+                {
+                    x = x - new Surreal(a.value);
+                    y.Increment();
+                }
+            }
+
+            return x;
+        }
     }
 }
