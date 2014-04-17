@@ -125,5 +125,21 @@ namespace Surrealism.Tests
 
             Assert.That(s.Real(), Is.EqualTo(num));
         }
+
+        [TestCase(0, 1)]
+        [TestCase(1, 10)]
+        [TestCase(0, -1)]
+        [TestCase(-10, -1)]
+        [TestCase(1, -1)]
+        [TestCase(0, -10)]
+        public void CanAddTwoNumbers(int a, int b)
+        {
+            var s1 = new Surreal(a);
+            var s2 = new Surreal(b);
+
+            var result = s1 + s2;
+
+            Assert.That(result.Real(), Is.EqualTo(a + b));
+        }
     }
 }
