@@ -211,5 +211,29 @@ namespace Surrealism.Tests
             Assert.IsTrue(numerator.IsZero());
             Assert.IsTrue(result.IsZero(), "0 / 42 should be zero");
         }
+
+        [TestCase(1)]
+        [TestCase(-1)]
+        public void IncrementOperator_WillIncrementTheRealValue(int a)
+        {
+            var s = new Surreal(a);
+
+            var result = s++;
+            var expected = a++;
+
+            Assert.That(result.Real(), Is.EqualTo(expected));
+        }
+
+        [TestCase(1)]
+        [TestCase(-1)]
+        public void DecrementOperator_WillIncrementTheRealValue(int a)
+        {
+            var s = new Surreal(a);
+
+            var result = s--;
+            var expected = a--;
+
+            Assert.That(result.Real(), Is.EqualTo(expected));
+        }
     }
 }
