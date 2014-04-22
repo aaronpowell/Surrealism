@@ -171,5 +171,45 @@ namespace Surrealism.Tests
 
             Assert.That(result.Real(), Is.EqualTo(a * b));
         }
+
+        [TestCase(10, 2)]
+        [TestCase(9, 3)]
+        [TestCase(9, -3)]
+        [TestCase(-9, -3)]
+        public void CanDivideTwoNumbers(int a, int b)
+        {
+            var s1 = new Surreal(a);
+            var s2 = new Surreal(b);
+
+            var result = s1 / s2;
+
+            Assert.That(result.Real(), Is.EqualTo(a / b));
+        }
+
+        [Test]
+        public void ZeroDenominator_WillThrowException()
+        {
+            var numerator = new Surreal(42);
+            var denominator = new Surreal();
+
+            Assert.IsTrue(denominator.IsZero());
+            Assert.Throws<DivideByZeroException>(() =>
+            {
+                var x = numerator / denominator;
+            });
+        }
+
+        [Test]
+        public void ZeroNumerator_WillReturnZero()
+        {
+            var numerator = new Surreal();
+            var realDenominator = 42;
+            var denominator = new Surreal(realDenominator);
+
+            var result = numerator / denominator;
+
+            Assert.IsTrue(numerator.IsZero());
+            Assert.IsTrue(result.IsZero(), "0 / 42 should be zero");
+        }
     }
 }
